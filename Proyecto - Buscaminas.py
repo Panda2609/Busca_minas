@@ -111,32 +111,18 @@ def posicionar_minas(M,n_minas):#posiciona las minas dentro del rango de la matr
 #def destape(TABLERO, Tablero_jugador, pos_i, pos_j):
     
     
-'''def destape(TABLERO, Tablero_jugador,pos_i,pos_j):#funcion de backtracking que destapa las casillas
-        Tablero_jugador=TABLERO[pos_i][pos_j]
-        
-        if pos_i -1 >= 0 and TABLERO[pos_i-1][pos_j] != 0:#arriba
-            destape(TABLERO, Tablero_jugador,pos_i-1,pos_j)
-            
-        if pos_i -1 >= 0 and pos_j+1 < len(TABLERO[0]) and TABLERO[pos_i-1][pos_j+1] != 0:#esquina sup derecha
-            destape(TABLERO, Tablero_jugador,pos_i-1,pos_j+1)
-            
-        if pos_j +1 < len(TABLERO[0]) and TABLERO[pos_i][pos_j+1] != 0:#derecha
-            destape(TABLERO, Tablero_jugador,pos_i,pos_j+1)
-            
-        if pos_j +1 < len(TABLERO[0]) and pos_i + 1 < len(TABLERO) and TABLERO[pos_i+1][pos_j+1] != 0:#esquina inf derecha
-            destape(TABLERO, Tablero_jugador,pos_i+1,pos_j+1)
-            
-        if pos_i +1 < len(TABLERO) and TABLERO[pos_i+1][pos_j] != 0:#abajo
-            destape(TABLERO, Tablero_jugador,pos_i+1,pos_j)
-            
-        if pos_i +1 < len(TABLERO) and pos_j -1 >= 0 and TABLERO[pos_i+1][pos_j-1] != 0:#esquina inf izquerda
-            destape(TABLERO, Tablero_jugador,pos_i+1,pos_j-1)
-            
-        if pos_j -1 >= 0 and TABLERO[pos_i][pos_j-1] != 0:#izquerda
-            destape(TABLERO, Tablero_jugador,pos_i,pos_j-1)
-            
-        if pos_i -1 >= 0 and pos_j -1 >= 0 and TABLERO[pos_i-1][pos_j-1] != 0:#esquina sup izquerda 
-            destape(TABLERO, Tablero_jugador,pos_i-1,pos_j-1)'''
+def destape(TABLERO, Tablero_jugador,pos_i,pos_j):#funcion de backtracking que destapa las casillas
+    #si el elemento de consulta es 0 -> destapo (copiar entre tableros)
+    #si no -> retorno
+
+    ##############################################
+    ######parte que busca en sus alrededores######
+    ##############################################
+    #si la pieza al lado "derecho" esta dentro del tablero y ademas no esta destapada -> reviso la pieza con destape(...)
+    #si la pieza al lado "izquierdo" esta dentro del tablero y ademas no esta destapada -> reviso la pieza con destape(...)
+    #si la pieza de "arriba" esta dentro del tablero y ademas no esta destapada -> reviso la pieza con destape(...)
+    #si la pieza de "abajo" esta dentro del tablero y ademas no esta destapada -> reviso la pieza con destape(...)
+
 #-------------------------programa principal----------------------------
 TABLERO, Tablero_jugador=menu() #contiene el tablero dependiendo del nivel
 imprime_tablero(Tablero_jugador)
